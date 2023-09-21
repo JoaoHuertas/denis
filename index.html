@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULÁRIO</title>
+    <style>
+     body{
+         margin: 10%;
+        background-color: darkgray;
+     }
+    h2{
+        background-color: darkslategrey;
+        color: darkgray;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <form name="submit-to-google-sheet1">
+        <h2>Qual seu time de coração?</h2>
+    </form>
+
+    <select name="time">
+        <option value="atletico">Atletico</option>
+        <option value="america">América</option>
+        <option value="vilanova">Vila Nova</option>
+        <option value="cruzeiro">cruzeiro</option>
+    </select>
+
+    <h2>Qual brinde você gostaria de ganhar?</h2>
+    <input name="brinde1" type="checkbox" value="sim">
+    <label name="brinde1" for="brinde">
+        Camisa de time
+    </label>
+
+    <input name="brinde2" type="checkbox" value="sim">
+    <label name="brinde2" for="brinde">
+        Ingresso VIP
+    </label>
+    
+    <h2>Você já foi no estadio em dia de jogo?</h2>
+    <input name="foi_estadio" type="radio" value="sim">
+    <label name="foi_estadio" for="foi_estadio">
+     Já fui ao Mineirão
+    </label>   
+    <input name="foi_estadio" type="radio" value="nao">
+    <label name="foi_estadio" for="foi_estadio">
+            Não fui ao mineirão
+     </label>
+    <h2>aproximadamente quantas vezes?</h2>
+        <input name="vezes" type="checkbox" id="inlineCheckbox1" value="0">
+        <label name="vezes" for="inclineCheckbox1">0 vezes</label>
+        <input name="vezes" type="checkbox" id="inclineCheckbox1" value="1a3">
+        <label name="vezes" for="inlineCheckbox1">1 a 3 vezes</label>
+        <input name="vezes" type="checkbox" id="inlineCheckbox1" value="=3e7">
+        <label name="vezes" for="inlineCheckbox1">3 a 7 vezes</label>
+        <input name="vezes" type="checkbox" id="inlineCheckbox1" value=">7">
+        <label name="vezes" for="inlinecheckbox1">Acima de 7</label>
+        <h2> deixe aqui a sua sugestão.</h2>
+        <input name="sugestão" type="text" placeholder="menssagem">
+        <button type="submit">cadastre</button>
+    </from>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbykUdU3PKOuqcS8_qApKPOLTCVYguztVMk0ajje6O8JExEwWjI6c00JfSX7seZQKBIwxQ/exec'
+        const from = document.forms['submit-to-google-Sheet1']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error("Error!", error.message))
+        })
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>
